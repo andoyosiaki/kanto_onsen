@@ -1,25 +1,24 @@
 <?php
-require "core/dbconect.php";
+require "dbconect.php";
+session_start();
+ini_set('display_errors',1);
 
-
-if(!empty($_POST)){
-	if($_POST['name'] !='' && $_POST['password'] !=""){
-		$login = $db->prepare('SELECT * FROM users WHERE email=? AND password=?');
+	if(!empty($_POST['name']) && !empty($_POST['password'])){ //何かしらの情報がpostされてきてから照合を開始
+		$login = $db->prepare('SELECT * FROM users WHERE name=? AND password=?');
 		$login->execute(array(
 			$_POST['name'],
-			$_POST['password']
+			sha1($_POST['password'])
 		));
 		$me = $login->fetch();
-var_dump($login);
+
 		if($me){
+			$_SESSION['name'] = $me['name']; //postされてきた情報とdbのデータが一致したらセッションにデータを挿入してinsert.phpに飛ばす
 			header('Location: insert.php');exit();
 		}else {
-			header('Location: front.php');
+			header('Location:front.php');
 		}
-	}else {
-		 header('Location: front.php');
 	}
-}
+
 
   ?>
 	<!DOCTYPE html>
@@ -27,7 +26,7 @@ var_dump($login);
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>login</title>
+		<title>Complete Bootstrap 4 Website Layout</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>

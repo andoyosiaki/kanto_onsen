@@ -1,10 +1,9 @@
-
-
 <?php
 require "dbconect.php";
 ini_set('display_errors',1);
+session_start();
 
-if(!empty($_POST) && $_SERVER['REQUEST_METHOD'] === 'POST'){
+if(isset($_SESSION['name']) && $_SERVER['REQUEST_METHOD'] === 'POST'){ //postで飛んできた場合とログインしてる場合のみ処理を実行。
   $name = $_POST['name'];
   $picture_id = $_POST['picture_id'];
   $prefecture = $_POST['prefecture'];
@@ -44,8 +43,10 @@ if(!empty($_POST) && $_SERVER['REQUEST_METHOD'] === 'POST'){
   $statement = $db->prepare('INSERT INTO onsen SET name=?,prefecture=?,p_id=?,adress=?,eat=?,sauna=?,towel=?,towel_text=?,hot_stone=?,open_bath=?,time_opne=?,time_close=?,w_time_opne=?,w_time_close=?,h_time_opne=?,h_time_close=?,w_a_fee=?,w_c_fee=?,h_a_fee=?,h_c_fee=?,close_text=?,close=?,jaf_url=?,nifty_url=?,onsen_url=?,map=?,blog_url=?,picture_id=?');
   $statement->execute(array($name,$prefecture,$p_id,$adress,$eat,$sauna,$towel,$towel_text,$hot_stone,$open_bath,$time_opne,$time_close,$w_time_opne,$w_time_close,$h_time_opne,$h_time_close,$w_a_fee,$w_c_fee,$h_a_fee,$h_c_fee,$close_text,$close,$jaf_url,$nifty_url,$onsen,$map_url,$blog_url,$picture_id));
 
-
-$onsens= $db->query('SELECT * FROM onsen ORDER BY id DESC');
+  session_unset();
+    header('Location:front.php');exit();
 }else {
-  header('Location:front.php');
+  session_unset();
+  header('Location:front.php');exit();
+  echo "失敗";
 }
