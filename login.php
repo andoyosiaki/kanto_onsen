@@ -1,5 +1,5 @@
 <?php
-require "dbconect.php";
+require_once "core/dbconect.php";
 session_start();
 ini_set('display_errors',1);
 

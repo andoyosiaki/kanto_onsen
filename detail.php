@@ -1,22 +1,18 @@
 <?php
 require_once "core/dbconect.php";
+require(__DIR__.'/function/functions.php');
 
 $onsens = $db->prepare('SELECT * FROM onsen WHERE id=?');
 $onsens->execute(array($_REQUEST['id']));
 $onsen= $onsens->fetch();
 
-require_once "functions/p_check.php";
 
-  $w_time_opne =  mb_substr($onsen['w_time_opne'],0,5);
-  $w_time_close =  mb_substr($onsen['w_time_close'],0,5);
 
 
   $h_a_fee = $onsen['h_a_fee'];
   $h_c_fee = $onsen['h_c_fee'];
 
-// 割引url
-  $jaf_url  = $onsen['jaf_url'];
-  $nifty_url = $onsen['nifty_url'];
+
 // mymap座標
   $map = "1UXV_NEtZycFB5aQ4_-54dC_G6Me2rsga&ll";
   $eq = "=";
@@ -47,7 +43,7 @@ require_once "functions/p_check.php";
 </head>
 <body>
 
-  <div class="jumbotron-fluid <?php echo $p_id; ?>">
+  <div class="jumbotron-fluid <?php echo prefecture($onsen['p_id']); ?>">
     <div class="container header_box">
       <div class="header_text">
         <p><a href="front.php">関東温泉</a></p>
@@ -100,17 +96,9 @@ require_once "functions/p_check.php";
               <dt>基本料金</dt>
               <dd class="before_info">平日・大人料金：<?php echo $onsen['w_a_fee'],"円"; ?></dd>
               <dd class="before_info">平日・子供料金：<?php echo $onsen['w_c_fee'],"円"; ?></dd>
-              <dd class="after_info">休日・大人料金：<?php if($h_a_fee === ""){
-                                                        echo "平日と同じ";
-                                                      }else {
-                                                        echo $onsen['h_a_fee'],"円";
-                                                      } ?>
+              <dd class="after_info">休日・大人料金：<?php fee($onsen['h_a_fee']); ?>
               </dd>
-              <dd class="after_info">休日・子供料金：<?php if($h_c_fee === ""){
-                                                        echo "平日と同じ";
-                                                      }else {
-                                                        echo $onsen['h_c_fee'],"円";
-                                                      }?>
+              <dd class="after_info">休日・子供料金：<?php fee($onsen['h_c_fee']); ?>
               </dd>
               <span class="info_text">( 詳しい料金体系は店舗公式ホームページをご覧下さい。)</span>
             </dl>
@@ -125,18 +113,8 @@ require_once "functions/p_check.php";
           <div class="col-12 col-md-4">
             <dl class="open_time">
               <dt>営業時間</dt>
-              <dd class="open_weekday">平日　<?php echo mb_substr($onsen['time_opne'],0,5); ?> - <?php echo mb_substr($onsen['time_close'],0,5); ?></dd>
-              <dd class="open_holiday">休日　<?php if($w_time_opne === "00:00"){
-                                                echo "同上";
-                                              }else {
-                                                echo mb_substr($onsen['h_time_opne'],0,5);
-                                              }?>
-                                              -
-                                              <?php if($w_time_close === "00:00"){
-                                                echo "";
-                                              }else {
-                                                echo mb_substr($onsen['h_time_close'],0,5);
-                                              } ?>
+              <dd class="open_weekday">平日　<?php echo  openclose($onsen['time_opne']); ?> - <?php echo  openclose($onsen['time_close']); ?></dd>
+              <dd class="open_holiday">休日　<?php Opnetimes($onsen['w_time_opne'],$onsen['h_time_opne']); ?>  -  <?php Closetime($onsen['w_time_close'],$onsen['h_time_close']); ?>
               </dd>
             </dl>
           </div>
@@ -156,17 +134,9 @@ require_once "functions/p_check.php";
           <div class="col-12 col-md-4">
             <dl class="dis_info">
               <dt>割引情報</dt>
-              <dd class="jaf">JAF割引：<?php if($jaf_url === ""): ?>
-                          <?php echo "割引はありません"; ?>
-                          <?php else: ?>
-                          <a href="https://jafnavi.jp/web/facility.php?sisetu_id=<?php echo $onsen['jaf_url']; ?>">割引内容</a>
-                          <?php endif; ?>
+              <dd class="jaf">JAF割引： <?php jaf($onsen['jaf_url']); ?>
               </dd>
-              <dd class="nifty">Nfty割引：<?php if($nifty_url === ""): ?>
-                          <?php echo "割引はありません"; ?>
-                          <?php else: ?>
-                          <a href="https://onsen.nifty.com/<?php echo $onsen['nifty_url']; ?>">割引内容</a>
-                        <?php endif; ?>
+              <dd class="nifty">Nfty割引： <?php nifty($onsen['nifty_url']); ?>
               </dd>
             </dl>
           </div>

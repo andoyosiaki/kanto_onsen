@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "dbconect.php";
+require_once "core/dbconect.php";
 ini_set('display_errors',1);
 
 if($_SESSION['name']){ //セッションが存在していたらログインしてる。

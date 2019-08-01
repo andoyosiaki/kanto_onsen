@@ -1,6 +1,7 @@
 <?php
 // 食事
 require "../core/dbconect.php";
+require('../function/functions.php');
 $onsens = $db->query('SELECT * FROM onsen	 WHERE eat="◯"');
 
 ?>
@@ -36,22 +37,11 @@ $onsens = $db->query('SELECT * FROM onsen	 WHERE eat="◯"');
 <div class="contaienr main_section">
   <article class="animated">
     <?php while ($onsen = $onsens->fetch()): ?>
-			<?php $p_id =  $onsen['p_id'];
-			switch ($p_id) {
-				case 1:
-					$p_id = "kanagawa";
-					break;
-				case 2:
-					$p_id = "sizuoka";
-					break;
-				case 3:
-					$p_id = 'yamanasi';
-				};?>
       <div class="article_box animated">
           <div class="article_inner-box animated">
               <h2><a href="../detail.php?id=<?php echo $onsen['id']; ?>"><?php echo $onsen['name']; ?></a></h2>
                 <div class="p_box">
-                  <p class=" <?php echo $p_id; ?>"><?php echo $onsen['prefecture']; ?></p>
+                  <p class=" <?php echo  prefecture($onsen['p_id']); ?>"><?php echo $onsen['prefecture']; ?></p>
                 </div>
               <p class="front-img"><a href="../detail.php?id=<?php echo $onsen['id']; ?>"><img src="../img/<?php echo $onsen['picture_id']; ?>.jpg"></a></p>
           </div>
