@@ -1,6 +1,5 @@
 <?php
 function prefecture($prefecture){
-  $p_id =  $onsen['p_id'];
   switch ($prefecture) {
     case 1:
       $p_id = "kanagawa";

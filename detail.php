@@ -8,12 +8,7 @@ $onsen= $onsens->fetch();
 
 
 
-
-  $h_a_fee = $onsen['h_a_fee'];
-  $h_c_fee = $onsen['h_c_fee'];
-
-
-// mymap座標
+    // mymap座標
   $map = "1UXV_NEtZycFB5aQ4_-54dC_G6Me2rsga&ll";
   $eq = "=";
   $adress = $onsen['map'];

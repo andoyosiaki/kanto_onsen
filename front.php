@@ -126,8 +126,6 @@ $onsens= $db->query('SELECT * FROM onsen ORDER BY id ASC');
 	      </div>
 	    <?php endwhile; ?>
 	  </article>
-
-
 	</div>
 </body>
 </html>
