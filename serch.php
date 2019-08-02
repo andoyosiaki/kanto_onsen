@@ -1,7 +1,19 @@
 <?php
 require_once "core/dbconect.php";
-$onsens = $db->query("SELECT * FROM onsen	 WHERE p_id='".$_POST['prefecture']."'");
-require_once "functions/serch_p_check.php";
+require(__DIR__.'/function/functions.php');
+
+if(isset($_POST['prefecture'])){
+	$prefecture = $db->prepare('SELECT * FROM onsen WHERE p_id=?');
+	$prefecture->execute(array($_POST['prefecture']));
+	$prefectures = $prefecture->fetch();
+
+	$onsens = $db->prepare('SELECT * FROM onsen WHERE p_id=?');
+	$onsens->execute(array($_POST['prefecture']));
+}else {
+	header('Location:front.php');
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -28,29 +40,18 @@ require_once "functions/serch_p_check.php";
 		<div class="container header_box">
 			<div class="header_text">
 				<p><a href="front.php">関東温泉</a></p>
-				<h1 class="type_h1"><?php echo $onsen; ?></h1>
+				<h1 class="type_h1"><?php echo $prefectures['prefecture']; ?></h1>
 			</div>
 		</div>
 	</header>
 <div class="contaienr main_section">
   <article class="animated">
     <?php while ($onsen = $onsens->fetch()): ?>
-			<?php $p_id =  $onsen['p_id'];
-			switch ($p_id) {
-				case 1:
-					$p_id = "kanagawa";
-					break;
-				case 2:
-					$p_id = "sizuoka";
-					break;
-				case 3:
-					$p_id = 'yamanasi';
-				};?>
       <div class="article_box animated">
           <div class="article_inner-box animated">
               <h2><a href="detail.php?id=<?php echo $onsen['id']; ?>"><?php echo $onsen['name']; ?></a></h2>
                 <div class="p_box">
-                  <p class=" <?php echo $p_id; ?>"><?php echo $onsen['prefecture']; ?></p>
+                  <p class=" <?php echo prefecture($onsen['p_id']); ?>"><?php echo $onsen['prefecture']; ?></p>
                 </div>
               <p class="front-img"><a href="detail.php?id=<?php echo $onsen['id']; ?>"><img src="img/<?php echo $onsen['picture_id']; ?>.jpg"></a></p>
           </div>
