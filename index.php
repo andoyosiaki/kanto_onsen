@@ -43,10 +43,9 @@ if(isset($_SESSION['name']) && $_SERVER['REQUEST_METHOD'] === 'POST'){ //postで
   $statement = $db->prepare('INSERT INTO onsen SET name=?,prefecture=?,p_id=?,adress=?,eat=?,sauna=?,towel=?,towel_text=?,hot_stone=?,open_bath=?,time_opne=?,time_close=?,w_time_opne=?,w_time_close=?,h_time_opne=?,h_time_close=?,w_a_fee=?,w_c_fee=?,h_a_fee=?,h_c_fee=?,close_text=?,close=?,jaf_url=?,nifty_url=?,onsen_url=?,map=?,blog_url=?,picture_id=?');
   $statement->execute(array($name,$prefecture,$p_id,$adress,$eat,$sauna,$towel,$towel_text,$hot_stone,$open_bath,$time_opne,$time_close,$w_time_opne,$w_time_close,$h_time_opne,$h_time_close,$w_a_fee,$w_c_fee,$h_a_fee,$h_c_fee,$close_text,$close,$jaf_url,$nifty_url,$onsen,$map_url,$blog_url,$picture_id));
 
-  session_unset();
+    session_unset();
     header('Location:front.php');exit();
 }else {
-  session_unset();
-  header('Location:front.php');exit();
-  echo "失敗";
+    session_unset();
+    header('Location:front.php');exit();
 }

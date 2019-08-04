@@ -1,18 +1,16 @@
 <?php
 require_once "core/dbconect.php";
 require(__DIR__.'/function/functions.php');
+ini_set('display_errors',1);
 
 $onsens = $db->prepare('SELECT * FROM onsen WHERE id=?');
 $onsens->execute(array($_REQUEST['id']));
 $onsen= $onsens->fetch();
 
-
-
-    // mymap座標
-  $map = "1UXV_NEtZycFB5aQ4_-54dC_G6Me2rsga&ll";
-  $eq = "=";
-  $adress = $onsen['map'];
-
+  // mymap座標
+$map = "1UXV_NEtZycFB5aQ4_-54dC_G6Me2rsga&ll";
+$eq = "=";
+$adress = $onsen['map'];
 
 ?>
 
@@ -21,7 +19,7 @@ $onsen= $onsens->fetch();
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title><?php  echo $onsen['name']; ?></title>
+	<title><?php echo $onsen['name']; ?></title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -129,9 +127,9 @@ $onsen= $onsens->fetch();
           <div class="col-12 col-md-4">
             <dl class="dis_info">
               <dt>割引情報</dt>
-              <dd class="jaf">JAF割引： <?php jaf($onsen['jaf_url']); ?>
+              <dd class="jaf">JAF割引：<?php jaf($onsen['jaf_url']); ?>
               </dd>
-              <dd class="nifty">Nfty割引： <?php nifty($onsen['nifty_url']); ?>
+              <dd class="nifty">Nfty割引：<?php nifty($onsen['nifty_url']); ?>
               </dd>
             </dl>
           </div>
