@@ -13,6 +13,40 @@ function prefecture($prefecture){
     return $p_id;
 }
 
+function title($title){
+  $titles = str_replace(array('.php','/kanto/','type','/'),'',$title);
+
+  switch ($titles) {
+    case 'front':
+    echo  "関東温泉";
+      break;
+    case 'serch':
+    echo '関東温泉';
+      break;
+    case 'insert':
+    echo '入力画面';
+      break;
+    case 'login':
+    echo 'ログイン画面';
+      break;
+    case 0:
+    echo '食事処あり';
+      break;
+    case 1:
+    echo 'サウナあり';
+      break;
+    case 2:
+    echo 'タオルのレンタル可能';
+      break;
+    case 3:
+    echo '岩盤浴あり';
+      break;
+    case 4:
+    echo '露天風呂あり';
+      break;
+  }
+}
+
 
 function fee($fee){
   if($fee === ''){
@@ -48,7 +82,6 @@ function Closetime($wtc,$htc){
     echo $new_htc;
   }
 }
-
 
 function jaf($jaf){
   if($jaf === ''){
