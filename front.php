@@ -121,7 +121,7 @@ $onsens= $db->query('SELECT * FROM onsen ORDER BY id ASC');
 	          <div class="article_inner-box animated">
 	              <h2><a href="detail.php?id=<?php echo $onsen['id']; ?>"><?php echo $onsen['name']; ?></a></h2>
 	                <div class="p_box">
-	                  <p class=" <?php echo prefecture($onsen['p_id']); ?>"><?php echo $onsen['prefecture']; ?></p>
+	                  <p class="<?php echo prefecture($onsen['p_id']); ?>"><?php echo $onsen['prefecture']; ?></p>
 	                </div>
 	              <p class="front-img"><a href="detail.php?id=<?php echo $onsen['id']; ?>"><img src="img/<?php echo $onsen['picture_id']; ?>.jpg"></a></p>
 	          </div>
