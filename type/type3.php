@@ -1,7 +1,7 @@
 <?php
 // 岩盤浴
 require "../core/dbconect.php";
-require('../function/functions.php');
+require "../function/functions.php";
 $onsens = $db->query('SELECT * FROM onsen	 WHERE hot_stone="◯"');
 
 ?>
@@ -48,7 +48,6 @@ $onsens = $db->query('SELECT * FROM onsen	 WHERE hot_stone="◯"');
       </div>
     <?php endwhile; ?>
   </article>
-
 </div>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
 require_once "core/dbconect.php";
-require(__DIR__.'/function/functions.php');
+require __DIR__."/function/functions.php";
 
 if(isset($_POST['prefecture'])){
 	$prefecture = $db->prepare('SELECT * FROM onsen WHERE p_id=?');

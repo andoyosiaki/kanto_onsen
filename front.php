@@ -1,13 +1,11 @@
 <?php
-require_once "core/dbconect.php";
-require(__DIR__.'/function/functions.php');
-ini_set('display_errors',1);
 session_start();
+require_once "core/dbconect.php";
+require __DIR__."/function/functions.php";
 
 $onsens= $db->query('SELECT * FROM onsen ORDER BY id ASC');
 
 ?>
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>

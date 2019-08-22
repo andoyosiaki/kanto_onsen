@@ -1,7 +1,7 @@
 <?php
 require_once "core/dbconect.php";
-require(__DIR__.'/function/functions.php');
-ini_set('display_errors',1);
+require __DIR__."/function/functions.php";
+
 
 $onsens = $db->prepare('SELECT * FROM onsen WHERE id=?');
 $onsens->execute(array($_REQUEST['id']));

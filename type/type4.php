@@ -1,7 +1,7 @@
 <?php
 // 露天風呂
 require "../core/dbconect.php";
-require('../function/functions.php');
+require "../function/functions.php";
 $onsens = $db->query('SELECT * FROM onsen	 WHERE open_bath="◯"');
 
 ?>
@@ -48,7 +48,6 @@ $onsens = $db->query('SELECT * FROM onsen	 WHERE open_bath="◯"');
       </div>
     <?php endwhile; ?>
   </article>
-
 </div>
 </body>
 </html>

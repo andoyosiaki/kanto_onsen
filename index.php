@@ -1,6 +1,5 @@
 <?php
 require_once "core/dbconect.php";
-ini_set('display_errors',1);
 session_start();
 
 if(isset($_SESSION['name']) && $_SERVER['REQUEST_METHOD'] === 'POST'){ //postで飛んできた場合とログインしてる場合のみ処理を実行。

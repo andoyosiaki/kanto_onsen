@@ -1,7 +1,7 @@
 <?php
 // 食事
 require "../core/dbconect.php";
-require('../function/functions.php');
+require "../function/functions.php";
 $onsens = $db->query('SELECT * FROM onsen	 WHERE eat="◯"');
 
 ?>
@@ -48,7 +48,6 @@ $onsens = $db->query('SELECT * FROM onsen	 WHERE eat="◯"');
       </div>
     <?php endwhile; ?>
   </article>
-
 </div>
 </body>
 </html>
