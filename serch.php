@@ -25,10 +25,7 @@ if(isset($_POST['prefecture'])){
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-<<<<<<< HEAD
   <link href="css/style.css" rel="stylesheet">
-=======
->>>>>>> 99163f2372bb69a6396a1ef85dca0768b3f0b6a0
 </head>
 <body>
 	<header class="jumbotron-fluid header2">

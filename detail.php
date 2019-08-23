@@ -1,10 +1,6 @@
 <?php
 require_once "core/dbconect.php";
 require __DIR__."/function/functions.php";
-<<<<<<< HEAD
-=======
-
->>>>>>> 99163f2372bb69a6396a1ef85dca0768b3f0b6a0
 
 $onsens = $db->prepare('SELECT * FROM onsen WHERE id=?');
 $onsens->execute(array($_REQUEST['id']));
@@ -27,12 +23,10 @@ $adress = $onsen['map'];
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-<<<<<<< HEAD
 	<script type="text/javascript" src="inview/jquery.inview.min.js"></script>
-=======
->>>>>>> 99163f2372bb69a6396a1ef85dca0768b3f0b6a0
 	<link rel="stylesheet" href="animate/animate.min.css">
   <link rel="stylesheet" href="css/detail.css">
+	<script src="js/main.js"></script>
 </head>
 <body>
   <div class="jumbotron-fluid <?php echo prefecture($onsen['p_id']); ?>">

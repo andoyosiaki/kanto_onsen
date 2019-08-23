@@ -5,3 +5,6 @@ try{
 }catch (PDOExeception $e){
   echo "DB接続エラー:". $e->getMassage();
 }
+
+
+ ?>
