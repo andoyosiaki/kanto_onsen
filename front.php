@@ -24,6 +24,9 @@ $onsens= $db->query('SELECT * FROM onsen ORDER BY id ASC');
 		<div class="title">
 			<h1 class="front_h1">関東温泉</h1>
 		</div>
+		<div class="author_box">
+			<a href="login.php">管理画面</a>
+		</div>
       <div class="container">
         <div class="serch_box">
 					<form action="serch.php" method="post">

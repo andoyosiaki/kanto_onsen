@@ -125,6 +125,17 @@ ul{
   font-family: "Hiragino Sans", ヒラギノ角ゴシック;
 }
 
+.author_box{
+  max-width: 1140px;
+  margin: 0 auto;
+  text-align: right;
+}
+
+.author_box a{
+  color: #fff;
+  margin: 0 15px 0 0;
+}
+
 /* ---serch_box */
 .feature_box{
   width: 200px;
@@ -471,7 +482,7 @@ ul{
   .article_box:nth-child(1n){
     margin-right: 0px;
   }
-  
+
   .article_box:nth-child(2n){
     margin-right: 0;
   }

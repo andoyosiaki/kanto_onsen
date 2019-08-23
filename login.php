@@ -42,6 +42,7 @@ if(!empty($_POST['name']) && !empty($_POST['password'])){ //何かしらの情�
 			<input type="password" name="password" value="" placeholder="password"><br>
 			<input type="submit" value="送信">
 		</form>
+		<a href="front.php">戻る</a>
 	</div>
 </body>
 </html>
