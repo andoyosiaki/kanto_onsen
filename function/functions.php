@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors',1);
+
 function prefecture($prefecture){
   switch ($prefecture) {
     case 1:

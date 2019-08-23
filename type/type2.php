@@ -39,8 +39,14 @@ $onsens = $db->query('SELECT * FROM onsen	 WHERE towel="◯"');
           <p class="front-img"><a href="../detail.php?id=<?php echo $onsen['id']; ?>"><img src="../img/<?php echo $onsen['picture_id']; ?>.jpg"></a></p>
         </div>
       </div>
+<<<<<<< HEAD
 	    <?php endwhile; ?>
 	  </article>
 	</div>
+=======
+    <?php endwhile; ?>
+  </article>
+</div>
+>>>>>>> 99163f2372bb69a6396a1ef85dca0768b3f0b6a0
 </body>
 </html>
