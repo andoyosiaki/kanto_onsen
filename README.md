@@ -33,6 +33,8 @@
 * MAMP
 * Atom Editor  
 * animate.css
+* jquery
+* inview.js
 
 
 ## 作った感想と今後の課題  
