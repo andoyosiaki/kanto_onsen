@@ -38,6 +38,7 @@ if(!empty($_POST['name']) && !empty($_POST['password'])){ //何かしらの情�
 	<div class="login_form">
 		<form class="" action="" method="post">
 			<p>管理人専用</p>
+			<p>ID:test <br>PASS:test</p>
 			<input type="text" name="name" value="" placeholder="ID"><br>
 			<input type="password" name="password" value="" placeholder="PASS"><br>
 			<input type="submit" value="送信">
