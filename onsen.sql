@@ -10,10 +10,10 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
-CREATE DATABASE onsens;
-USE onsens;
+CREATE DATABASE onsen;
+USE onsen;
 --
--- Database: `onsens`
+-- Database: `onsen`
 --
 
 
