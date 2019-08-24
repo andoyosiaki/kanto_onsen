@@ -26,7 +26,7 @@ if(!empty($_POST['name']) && !empty($_POST['password'])){ //何かしらの情�
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title><?php echo title($_SERVER['PHP_SELF']); ?></title>
+	<title>管理画面</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -38,9 +38,8 @@ if(!empty($_POST['name']) && !empty($_POST['password'])){ //何かしらの情�
 	<div class="login_form">
 		<form class="" action="" method="post">
 			<p>管理人専用</p>
-			<p>ID:test <br>PASS:test</p>
-			<input type="text" name="name" value="" placeholder="adress"><br>
-			<input type="password" name="password" value="" placeholder="password"><br>
+			<input type="text" name="name" value="" placeholder="ID"><br>
+			<input type="password" name="password" value="" placeholder="PASS"><br>
 			<input type="submit" value="送信">
 		</form>
 		<a href="front.php">戻る</a>
