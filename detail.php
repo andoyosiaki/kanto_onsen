@@ -41,11 +41,11 @@ $adress = $onsen['map'];
     <div class="container section1">
       <div class="row">
         <div class="col-md-6">
-            <h1 class="animated"><?php echo $onsen['name']; ?></h1>
+            <h1 class="animated slideInLeft"><?php echo $onsen['name']; ?></h1>
         </div>
         <div class="col-md-6">
-            <h2 class="animated">所在地:<?php echo $onsen['prefecture']; ?></h2>
-            <address class="animated">住所:<?php echo $onsen['adress']; ?></address>
+            <h2 class="animated slideInRight">所在地:<?php echo $onsen['prefecture']; ?></h2>
+            <address class="animated slideInRight">住所:<?php echo $onsen['adress']; ?></address>
         </div>
       </div>
       <p class="front-img">
@@ -54,7 +54,7 @@ $adress = $onsen['map'];
     </div>
     <div class="container btn_box">
       <div class="inner-btn_box">
-        <button type="button" class="btn btn-outline-danger bg-danger  animated" id="blog"><a href="https://onsenfujisan.com/onsen/<?php echo $onsen['blog_url'];?>" target=”_blank”>温泉訪問レポート</button>
+        <button type="button" class="btn btn-outline-danger bg-danger  animated tada" id="blog"><a href="https://onsenfujisan.com/onsen/<?php echo $onsen['blog_url'];?>" target=”_blank”>温泉訪問レポート</button>
         <button type="button" class="btn btn-outline-dark animated"><a href="<?php echo $onsen['onsen_url'];?>" target=”_blank”>公式ホームページ</a></button>
       </div>
     </div>
