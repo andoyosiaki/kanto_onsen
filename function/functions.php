@@ -13,8 +13,6 @@ function prefecture($prefecture){
     return $p_id;
 }
 
-
-
 function fee($fee){
   if($fee === ''){
     echo "平日と同じ";
@@ -31,7 +29,6 @@ return  $newtime =  mb_substr($time,0,5);
 function Opnetimes($wto,$hto){
   $new_wto = openclose($wto);
   $new_hto = openclose($hto);
-
   if($new_wto === '00:00'){
     echo "同上";
   }else {
@@ -42,7 +39,6 @@ function Opnetimes($wto,$hto){
 function Closetime($wtc,$htc){
   $new_wtc = mb_substr($wtc,0,5);
   $new_htc = mb_substr($htc,0,5);
-
   if($new_wtc === '00:00'){
     echo "";
   }else {
