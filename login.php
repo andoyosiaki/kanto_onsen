@@ -2,7 +2,6 @@
 session_start();
 require_once "core/dbconect.php";
 require __DIR__."/function/functions.php";
-ini_set('display_errors',1);
 
 if(!empty($_POST['name']) && !empty($_POST['password'])){ //何かしらの情報がpostされてきてから照合を開始
 	$login = $db->prepare('SELECT * FROM users WHERE name=? AND password=?');

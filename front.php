@@ -1,7 +1,7 @@
 <?php
+session_start();
 require_once __DIR__."/core/dbconect.php";
 require __DIR__."/function/functions.php";
-session_start();
 
 $onsens= $db->query('SELECT * FROM onsen ORDER BY id ASC');
 
