@@ -8,6 +8,7 @@
 アプリ名
 ====
 **<a href="https://2.kagome.xyz">関東温泉</a>**
+<img src="https://user-images.githubusercontent.com/52596476/64944279-fe0ed100-d8a8-11e9-8142-0299a649cb30.png" width=1000>
 
 ## 簡単な説明
 私が趣味で訪れた関東周辺にある日帰り温泉の紹介サイトです。  
